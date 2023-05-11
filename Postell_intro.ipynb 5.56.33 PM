@@ -1,0 +1,184 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "c9124ef6-3c58-42a8-94fc-639457871ed4",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "# Postell_intro"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cd70e7cd-66fe-4643-afb2-cc18a7302bd7",
+   "metadata": {},
+   "source": [
+    "## Roxanne Postell"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 234,
+   "id": "3122f299-d4c9-42b6-ab61-6c31a7a3fb16",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import random\n",
+    "numbers = [random.randrange(30, 100) for i in range(40)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 235,
+   "id": "da1b844a-397f-4c5c-8659-4772e364a12d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "numbers.sort()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 236,
+   "id": "47fd0526-f4a0-4b88-94e7-1b7b8aacd0f8",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "30 30 31 32 33 38 39 40 40 41 42 43 44 48 48 50 55 56 60 60 61 62 62 64 65 65 69 70 71 71 72 72 73 84 84 85 86 90 91 94 "
+     ]
+    }
+   ],
+   "source": [
+    "    for i in numbers:\n",
+    "        print(i, end=\" \")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3f6598f6-048c-4f09-b717-e3a205b6ac7d",
+   "metadata": {},
+   "source": [
+    "## The Sample Mean\n",
+    "* The mean is calculated by first adding together the numbers\n",
+    "* Then divide the total sum by the amount of numbers there are"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1942b2da-b143-45b8-a6d2-0119311848ef",
+   "metadata": {},
+   "source": [
+    "$$ \\overline{x} \\equiv \\frac{\\sum x_i}{n} $$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 237,
+   "id": "a6dc80e3-9752-4543-9789-3c6dbbde409b",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'58.77'"
+      ]
+     },
+     "execution_count": 237,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "total = 0\n",
+    "for i in numbers:\n",
+    "    total += i\n",
+    "    average = total / 40\n",
+    "f'{average:.2f}'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b3099cd4-5bb2-4368-888b-eb9d18d04b21",
+   "metadata": {},
+   "source": [
+    "## The Median\n",
+    "\n",
+    "[Statistical Median](https://www150.statcan.gc.ca/n1/edu/power-pouvoir/ch11/median-mediane/5214872-eng.htm)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 241,
+   "id": "5f04a52b-ccab-428b-a7e9-b70c29a6d1d7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "60.5\n"
+     ]
+    }
+   ],
+   "source": [
+    "#The median is calculated for an even number of values by finding the mean of the middle two values\n",
+    "\n",
+    "x = len(numbers)\n",
+    "if x % 2 == 0:     \n",
+    "    a = numbers[x // 2]\n",
+    "    b = numbers[(x // 2) - 1]\n",
+    "    median = float((a + b) / 2.0)\n",
+    "    print(f'{median:.1f}')\n",
+    "else:              \n",
+    "    index = x / 2\n",
+    "    print(f'{numbers[index]:.1f}')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7da36fa7-9667-42a8-b800-8e5fb56cb122",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fc255d94-f1ff-4cf7-8ba2-079d564083ad",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
